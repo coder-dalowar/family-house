@@ -1,16 +1,21 @@
-'use client'
+"use client";
 
-import { useEffect } from 'react'
-import AOS from 'aos'
-import 'aos/dist/aos.css'
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AOSProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AOS.init({
-      duration: 700, // animation duration in ms
-      once: true,     // only animate once
-    })
-  }, [])
+      duration: 700,
+      once: true,
+    });
+    const refreshInterval = setInterval(() => {
+      AOS.refresh();
+    }, 100);
 
-  return <>{children}</>
+    return () => clearInterval(refreshInterval);
+  }, []);
+
+  return <>{children}</>;
 }
