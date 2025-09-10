@@ -1,0 +1,120 @@
+/* ---------------------- Google fonts --------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@import "tailwindcss";
+
+@theme {
+  /* Custom Colors */
+  --color-brown: #8e6565;
+  --color-primary: #3a3a3a;
+  --color-gray: #f6f9fb;
+  --color-darkBg: #0a2540;
+  
+
+
+  /* Custom Screens */
+  /* --breakpoint-xs: 480px; */
+
+  /* Custom Fonts */
+  --font-work-sans: 'workSans', sans-serif;
+  --font-ivymode: 'ivyMode', sans-serif;
+  
+
+  /* Custom Gradients */
+
+  /* Custom Shadows */
+}
+
+
+
+
+/* ------------------ Global CSS ---------------------*/
+
+body {
+  @apply font-work-sans font-normal text-base leading-normal text-primary bg-white;  
+}
+
+/* container */
+.container {
+  @apply mx-auto px-4 2xl:max-w-[1640px] ;
+}
+
+/* heading */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-ivymode;
+}
+
+/* sticky header */
+.header_sticky {
+  @apply bg-white lg:py-[25px] transition-all duration-300 shadow-md;
+}
+
+.header_sticky .logo a {
+  @apply text-brown;
+}
+
+.header_sticky .logo img {
+  @apply filter-[brightness(0)_saturate(100%)_invert(39%)_sepia(5%)_saturate(2831%)_hue-rotate(314deg)_brightness(105%)_contrast(77%)];
+}
+
+.header_sticky ul li a {
+  @apply text-black;
+}
+
+.header_sticky .header_btn a {
+  @apply bg-brown text-white;
+}
+
+.header_sticky .hamburgar_icon {
+  @apply filter-[brightness(0)_saturate(100%)_invert(39%)_sepia(5%)_saturate(2831%)_hue-rotate(314deg)_brightness(105%)_contrast(77%)];
+}
+
+
+/* scroll down animation */
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 55px;
+	}
+}
+
+@-webkit-keyframes wheel {
+	to {
+		opacity: 0;
+		top: 55px;
+	}
+}
+
+
+/*  right arrow animation */
+@keyframes moveRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(12px);
+  }
+}
+
+
+
+/* gallery_slider only max-width 767px and down */
+
+@media (max-width: 767px) {
+  .gallery_slider .swiper-wrapper {
+    @apply items-center;
+  }
+
+  .gallery_slider .swiper-slide {
+    @apply !max-w-[250px] !mt-5 !ml-5 !mr-0;
+  }
+
+  .gallery_slider .swiper-slide div {
+    @apply mt-5;
+  }
+
+  .gallery_slider .swiper-slide button {
+    @apply w-[45px] h-[45px];
+  }
+}
