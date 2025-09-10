@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
@@ -34,6 +34,12 @@ const Facility: React.FC = () => {
                         className="facility_slider w-full h-full !overflow-visible"
                         slidesPerView={3.3}
                         spaceBetween={30}
+                        loop={true}
+                        speed={800}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
                         navigation={{
                             nextEl: '.facility-button-next',
                             prevEl: '.facility-button-prev',
@@ -45,7 +51,7 @@ const Facility: React.FC = () => {
                             1024: { slidesPerView: 2.5, spaceBetween: 24 },
                             1280: { slidesPerView: 3.3, spaceBetween: 30 },
                         }}
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                     >
                         {[
                             {

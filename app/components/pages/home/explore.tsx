@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper';
+import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 
 const Explore: React.FC = () => {
@@ -26,6 +27,11 @@ const Explore: React.FC = () => {
             slidesPerView="auto"
             spaceBetween={30}
             loop={true}
+            speed={800}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false,
+            }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
               0: { spaceBetween: 15 },
@@ -33,6 +39,7 @@ const Explore: React.FC = () => {
               1024: { spaceBetween: 20 },
               1280: { spaceBetween: 30 },
             }}
+            modules={[Autoplay]}
           >
             {[
               { img: 'explore-1.png', title: 'Salon', desc: '1 rozkładana sofa' },
