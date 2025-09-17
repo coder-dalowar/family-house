@@ -9,11 +9,11 @@ const MountainSection: React.FC = () => {
       <div className="container">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
           {/* Left Column */}
-          <div className="w-full lg:max-w-[350px] xl:max-w-[450px] 2xl:max-w-[600px]" data-aos="zoom-in-right">
+          <div className="w-full lg:max-w-[350px] xl:max-w-[450px] 2xl:max-w-[600px] relative z-10" data-aos="zoom-in-right">
             <Image
               src="/assets/img/mountain.png"
               alt=""
-              className="max-w-full relative z-10 mx-auto lg:mx-0"
+              className="max-w-full mx-auto lg:mx-0"
               width="600"
               height="400"
             />
