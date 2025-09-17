@@ -133,15 +133,18 @@ const Hero: React.FC = () => {
                     <p className="text-[#6D6D6D] text-lg whitespace-nowrap xl:text-xl">2 os.</p>
                   </div>
 
-                  <div className="w-[9%] sm:w-[10%] lg:w-auto">
+                  <Link
+                    href="#"
+                    className="w-[36px] xl:w-[50px] h-[70px] xl:h-[90px] flex items-center justify-center  -rotate-90 relative"
+                  >
                     <Image
-                      src="/assets/img/right-arrow.svg"
-                      alt="arrow"
-                      width={40}
-                      height={40}
-                      className="w-[40px] mx-auto transition-all animate-[moveRight_0.8s_linear_infinite_alternate]"
+                      src="/assets/img/arrow-down.svg"
+                      alt="down-arrow"
+                      width={16}
+                      height={16}
+                      className="w-3.5 xl:w-5 transition-all duration-300 absolute top-2 left-1/2 -translate-x-1/2 animate-[wheel_2s_linear_infinite]"
                     />
-                  </div>
+                  </Link>
 
                   <div className="w-[49%] sm:w-[40%] lg:w-auto">
                     <button
