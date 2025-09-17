@@ -89,14 +89,16 @@ const Header: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center 2xl:gap-[55px] lg:gap-[35px] gap-[25px]">
-            <ul className="flex items-center 2xl:gap-[50px] xl:gap-[30px] lg:gap-[25px] gap-[20px]">
+            <ul className="flex items-center gap-[20px]">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <Link
-                  href={''}
-                    type="button"
+                    href={`#${item.sectionId}`}
                     className="text-white text-base xl:text-xl font-medium transition-all hover:opacity-80 bg-transparent border-none cursor-pointer"
-                    onClick={() => scrollToSection(item.sectionId)}
+                    onClick={(e) => {
+                      e.preventDefault(); // ⛔ stop default jump
+                      scrollToSection(item.sectionId); // ✅ use your smooth scroll
+                    }}
                   >
                     {item.label}
                   </Link>
@@ -151,10 +153,12 @@ const Header: React.FC = () => {
                 {navItems.map((item) => (
                   <li key={item.label}>
                     <Link
-                    href={''}
-                      type="button"
+                      href={`#${item.sectionId}`}
                       className="w-full block text-black text-base font-medium transition-all hover:text-brown border-b border-b-brown px-3 py-4 hover:pl-5 bg-transparent border-none cursor-pointer"
-                      onClick={() => scrollToSection(item.sectionId)}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToSection(item.sectionId);
+                      }}
                     >
                       {item.label}
                     </Link>
