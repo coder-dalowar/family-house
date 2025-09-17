@@ -462,7 +462,7 @@ const Gallery: React.FC = () => {
         </div>
       )}
 
-    </section>
+    </section> 
   );
 };
 
