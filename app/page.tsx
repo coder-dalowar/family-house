@@ -15,17 +15,37 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <Header />
-      <Hero />
-      <About/>
-      <Explore/>
-      <Facility/>
-      <Location/>
-      <Gallery/>
-      <FAQ/>
-      <GuestSection/>
-      <MountainSection/>
-      <ContactSection/>
-      <FooterSection/>
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="explore">
+        <Explore />
+      </div>
+      <div id="facility">
+        <Facility />
+      </div>
+      <div id="location">
+        <Location />
+      </div>
+      <div id="gallery">
+        <Gallery />
+      </div>
+      <div id="faq">
+        <FAQ />
+      </div>
+      <div id="guest">
+        <GuestSection />
+      </div>
+      <div id="mountain">
+        <MountainSection />
+      </div>
+      <div id="contact">
+        <ContactSection />
+      </div>
+      <FooterSection />
     </div>
   );
 }

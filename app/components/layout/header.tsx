@@ -7,6 +7,17 @@ import Link from 'next/link';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Navigation items mapping to section IDs
+  const navItems = [
+    { label: 'Home', sectionId: 'hero' },
+    { label: 'O nas', sectionId: 'about' },
+    { label: 'Oferta', sectionId: 'explore' },
+    { label: 'Atrakcje', sectionId: 'facility' },
+    { label: 'Galeria', sectionId: 'gallery' },
+    { label: 'FAQ', sectionId: 'faq' },
+    { label: 'Kontakt', sectionId: 'contact' },
+  ];
+
   // Toggle offcanvas menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -37,30 +48,32 @@ const Header: React.FC = () => {
     }
   }, [isMenuOpen]);
 
-  // Smooth scroll for scroll_down link (if used in the component)
-  useEffect(() => {
-    const scrollLink = document.querySelector('.scroll_down a');
-    if (scrollLink) {
-      scrollLink.addEventListener('click', (e: Event) => {
-        e.preventDefault();
-        document.querySelector('#about')?.scrollIntoView({
-          behavior: 'smooth',
-        });
+  // Handle smooth scrolling to section
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
       });
     }
-  }, []);
+    // Close mobile menu if open
+    if (isMenuOpen) {
+      toggleMenu();
+    }
+  };
 
   return (
     <header
       className="bg-transparent w-full block xl:py-[42px] lg:py-[30px] md:py-[24px] py-[20px] fixed top-0 transition-all z-[1024]"
       id="header"
     >
-      <div className="container">
-        <nav className="flex items-center justify-between" data-aos="fade-down">
+      <div className="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
+        <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="logo">
             <Link
-              href="#"
+              href="/"
               className="text-[#F4EFEB] text-[27px] sm:text-[30px] md:text-[30px] lg:text-[26px] 2xl:text-[35px] font-ivymode font-normal tracking-[-1px] inline-flex items-center gap-3 2xl:gap-4"
             >
               <Image
@@ -77,13 +90,15 @@ const Header: React.FC = () => {
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center 2xl:gap-[55px] lg:gap-[35px] gap-[25px]">
             <ul className="flex items-center 2xl:gap-[50px] xl:gap-[30px] lg:gap-[25px] gap-[20px]">
-              {['Home', 'O nas', 'Oferta', 'Atrakcje', 'Galeria', 'FAQ', 'Kontakt'].map((item) => (
-                <li key={item}>
+              {navItems.map((item) => (
+                <li key={item.label}>
                   <Link
-                    href="#"
-                    className="text-white text-base xl:text-xl font-medium transition-all hover:opacity-60"
+                  href={''}
+                    type="button"
+                    className="text-white text-base xl:text-xl font-medium transition-all hover:opacity-80 bg-transparent border-none cursor-pointer"
+                    onClick={() => scrollToSection(item.sectionId)}
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -129,18 +144,19 @@ const Header: React.FC = () => {
       <div
         className={`offcanvas_menu lg:hidden w-full h-screen bg-white pt-[100px] flex flex-col fixed top-0 ${isMenuOpen ? 'right-0' : '-right-full'} -z-10 transition-all duration-500 overflow-auto`}
       >
-        <div className="container">
+        <div className="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
           <div className="offcanvas_body flex flex-col h-[calc(100vh-100px)]">
             <div className="menu">
               <ul>
-                {['Home', 'O nas', 'Oferta', 'Atrakcje', 'Galeria', 'FAQ', 'Kontakt'].map((item) => (
-                  <li key={item}>
+                {navItems.map((item) => (
+                  <li key={item.label}>
                     <Link
-                      href="#"
-                      className="w-full block text-black text-base font-medium transition-all hover:text-brown border-b border-b-brown px-3 py-4 hover:pl-5"
-                      onClick={toggleMenu}
+                    href={''}
+                      type="button"
+                      className="w-full block text-black text-base font-medium transition-all hover:text-brown border-b border-b-brown px-3 py-4 hover:pl-5 bg-transparent border-none cursor-pointer"
+                      onClick={() => scrollToSection(item.sectionId)}
                     >
-                      {item}
+                      {item.label}
                     </Link>
                   </li>
                 ))}
