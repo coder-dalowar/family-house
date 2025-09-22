@@ -28,13 +28,14 @@ const Hero: React.FC = () => {
           autoPlay
           loop
           muted
-          className="w-full h-[745px] sm:h-[750px] md:h-[780px] lg:h-[800px] xl:h-[920px] 2xl:min-h-[calc(100vh-60px)] object-cover object-bottom"
+          className="w-full h-[745px] sm:h-[750px] md:h-[780px] lg:h-[800px] xl:min-h-[calc(100vh-47px)] object-cover object-bottom"
         />
 
         {/* Hero Content */}
-        <div className="w-full h-full pt-[120px] lg:pt-[130px] xl:pt-[154px] absolute inset-0">
+        <div className="w-full h-full pt-[120px] lg:pt-[130px] xl:pt-[130px] absolute inset-0">
           <div className="container h-full">
             <div className="relative w-full h-full flex flex-col">
+
               {/* Contact Text */}
               <div className="max-w-[185px] w-full ml-auto text-right" data-aos="fade-left">
                 <p className="text-white text-base font-light leading-[120%] text-right mb-[3px]">
@@ -58,7 +59,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Social Icons */}
-              <div className="text-right mt-[60px] md:mt-[80px] lg:mt-[120px] xl:mt-[150px]" data-aos="fade-left">
+              <div className="text-right mt-[60px] md:mt-[80px] lg:mt-[100px]" data-aos="fade-left">
                 <ul className="flex flex-col gap-1.5 items-end">
                   {['facebook', 'instagram'].map((social) => (
                     <li key={social}>
@@ -77,8 +78,8 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Hero Text */}
-              <div className="lg:mt-auto pb-[30px] lg:pb-[160px] xl:pb-[180px] pt-[16px] sm:pt-0">
-                <h2 className="text-white text-[32px] md:text-[40px] lg:text-[42px] xl:text-[65px] 2xl:text-[80px] font-normal leading-[133.75%] tracking-[-1px] xl:tracking-[-3px] mb-[36px] md:mb-[40px] lg:mb-[45px] xl:mb-[50px] 2xl:mb-[62px]" data-aos="fade-up">
+              <div className="lg:mt-auto pb-[30px] lg:pb-[160px] xl:pb-[140px] pt-[16px] sm:pt-0">
+                <h2 className="text-white text-[32px] md:text-[40px] lg:text-[42px] xl:text-[65px] 2xl:text-[75px] font-normal leading-[133.75%] tracking-[-1px] xl:tracking-[-3px] mb-[36px] md:mb-[40px] lg:mb-[45px] xl:mb-[50px]" data-aos="fade-up">
                   Rodzinny wypoczynek u podnóża Tatr
                 </h2>
 
@@ -206,6 +207,7 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </div>
