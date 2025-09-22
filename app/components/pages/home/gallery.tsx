@@ -55,12 +55,13 @@ const Gallery: React.FC = () => {
           className="gallery_slider w-full h-full !overflow-visible"
           slidesPerView="auto"
           spaceBetween={0}
-          // loop={true}
-          speed={800}
-          // autoplay={{
-          //   delay: 2000,
-          //   disableOnInteraction: false,
-          // }}
+          loop={true}
+          speed={1200}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          freeMode={true}
           modules={[Autoplay]}
         >
           {/* Gallery Slide 1 */}
@@ -140,7 +141,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[574px] mt-[457px] ml-[-214px]">
             <div className="relative">
               <img src="assets/img/gallery-11.png" alt="" className="w-full" width="574" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -148,7 +149,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-12.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -156,7 +157,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-13.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -164,7 +165,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-14.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -172,11 +173,11 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-15.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
             <div className="relative mt-[39px]">
               <img src="assets/img/gallery-16.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -184,7 +185,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-17.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -192,7 +193,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-18.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -200,7 +201,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-19.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -208,7 +209,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-20.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -216,7 +217,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-21.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -224,7 +225,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-22.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -232,11 +233,11 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-23.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
             <div className="relative mt-[39px]">
               <img src="assets/img/gallery-24.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -244,7 +245,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-25.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -252,7 +253,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-26.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -260,7 +261,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[40px]">
             <div className="relative">
               <img src="assets/img/gallery-27.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -268,7 +269,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-28.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -276,7 +277,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-29.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -284,7 +285,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-30.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -292,11 +293,11 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-31.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
             <div className="relative mt-[39px]">
               <img src="assets/img/gallery-32.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -304,7 +305,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[38px]">
             <div className="relative">
               <img src="assets/img/gallery-33.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -312,7 +313,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative mt-[39px]">
               <img src="assets/img/gallery-34.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -320,7 +321,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-35.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -328,7 +329,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[38px]">
             <div className="relative">
               <img src="assets/img/gallery-36.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -336,7 +337,7 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[40px]">
             <div className="relative">
               <img src="assets/img/gallery-37.png" alt="" className="w-full" width="428" height="400" />
-              
+
             </div>
           </SwiperSlide>
 
@@ -344,11 +345,11 @@ const Gallery: React.FC = () => {
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
               <img src="assets/img/gallery-38.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
             <div className="relative mt-[39px]">
               <img src="assets/img/gallery-39.png" alt="" className="w-full" width="551" height="400" />
-              
+
             </div>
           </SwiperSlide>
         </Swiper>
@@ -377,7 +378,7 @@ const Gallery: React.FC = () => {
         </div>
       )}
 
-    </section> 
+    </section>
   );
 };
 
