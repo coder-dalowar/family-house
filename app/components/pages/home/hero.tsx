@@ -33,7 +33,8 @@ const Hero: React.FC = () => {
 
         {/* Hero Content */}
         <div className="w-full h-full pt-[120px] lg:pt-[130px] xl:pt-[130px] absolute inset-0">
-          <div className="container h-full">
+          
+          <div className="h-full px-4 sm:px-5 lg:px-[36px]">
             <div className="relative w-full h-full flex flex-col">
 
               {/* Contact Text */}
@@ -160,7 +161,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Review and Scroll Down */}
-              <div className="max-w-[300px] md:max-w-[320px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[467px] w-full mx-auto lg:mx-0 lg:absolute right-0 bottom-[88px]" data-aos="zoom-in-left">
+              <div className="max-w-[300px] md:max-w-[320px] lg:max-w-[300px] xl:max-w-[400px] 2xl:max-w-[467px] w-full ml-auto lg:mx-0 lg:absolute right-0 bottom-[88px]" data-aos="zoom-in-left">
                 <Image
                   src="/assets/img/line.png"
                   alt="line"
@@ -168,7 +169,7 @@ const Hero: React.FC = () => {
                   height={10}
                   className="lg:w-full hidden lg:block"
                 />
-                <div className="flex items-center justify-center lg:justify-end gap-4 xl:gap-8 lg:mt-[-75px] z-10 relative">
+                <div className="flex items-center justify-end gap-4 xl:gap-8 lg:mt-[-75px] z-10 relative">
                   {/* Review Item */}
                   <div className="flex items-center gap-[11px] relative z-20">
                     <Image

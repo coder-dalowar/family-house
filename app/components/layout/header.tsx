@@ -68,7 +68,7 @@ const Header: React.FC = () => {
       className="bg-transparent w-full block xl:py-[42px] lg:py-[30px] md:py-[24px] py-[20px] fixed top-0 transition-all z-[1024]"
       id="header"
     >
-      <div className="container px-4 sm:px-6 lg:px-8 max-w-[1200px] mx-auto">
+      <div className="px-4 sm:px-5 lg:px-[50px] xl:px-[60px]">
         <nav className="flex items-center justify-between">
           {/* Logo */}
           <div className="logo">
@@ -96,8 +96,8 @@ const Header: React.FC = () => {
                     href={`#${item.sectionId}`}
                     className="text-white text-base xl:text-xl font-medium transition-all hover:opacity-80 bg-transparent border-none cursor-pointer"
                     onClick={(e) => {
-                      e.preventDefault(); // ⛔ stop default jump
-                      scrollToSection(item.sectionId); // ✅ use your smooth scroll
+                      e.preventDefault();
+                      scrollToSection(item.sectionId);
                     }}
                   >
                     {item.label}
