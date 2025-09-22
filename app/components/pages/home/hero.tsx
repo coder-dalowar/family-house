@@ -21,13 +21,14 @@ const Hero: React.FC = () => {
   return (
     <section className="lg:pt-[15px] xl:pt-[22px] lg:px-[15px] xl:px-[25px] lg:pb-[20px] xl:pb-[28px]">
       <div className="relative">
+
         {/* Background Video */}
         <video
           src="/assets/videos/hero-video.mp4"
           autoPlay
           loop
           muted
-          className="w-full h-[745px] sm:h-[750px] md:h-[780px] lg:h-[800px] xl:h-[920px] 2xl:h-[1040px] object-cover object-bottom"
+          className="w-full h-[745px] sm:h-[750px] md:h-[780px] lg:h-[800px] xl:h-[920px] 2xl:min-h-[calc(100vh-60px)] object-cover object-bottom"
         />
 
         {/* Hero Content */}
@@ -208,6 +209,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
