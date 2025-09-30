@@ -4,15 +4,63 @@ import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Gallery: React.FC = () => {
   const [previewImage, setPreviewImage] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  // Array of gallery images
+  const galleryImages = [
+    'assets/img/gallery-1.png',
+    'assets/img/gallery-2.png',
+    'assets/img/gallery-3.png',
+    'assets/img/gallery-4.png',
+    'assets/img/gallery-5.png',
+    'assets/img/gallery-6.png',
+    'assets/img/gallery-7.png',
+    'assets/img/gallery-8.png',
+    'assets/img/gallery-9.png',
+    'assets/img/gallery-10.png',
+    'assets/img/gallery-11.png',
+    'assets/img/gallery-12.png',
+    'assets/img/gallery-13.png',
+    'assets/img/gallery-14.png',
+    'assets/img/gallery-15.png',
+    'assets/img/gallery-16.png',
+    'assets/img/gallery-17.png',
+    'assets/img/gallery-18.png',
+    'assets/img/gallery-19.png',
+    'assets/img/gallery-20.png',
+    'assets/img/gallery-21.png',
+    'assets/img/gallery-22.png',
+    'assets/img/gallery-23.png',
+    'assets/img/gallery-24.png',
+    'assets/img/gallery-25.png',
+    'assets/img/gallery-26.png',
+    'assets/img/gallery-27.png',
+    'assets/img/gallery-28.png',
+    'assets/img/gallery-29.png',
+    'assets/img/gallery-30.png',
+    'assets/img/gallery-31.png',
+    'assets/img/gallery-32.png',
+    'assets/img/gallery-33.png',
+    'assets/img/gallery-34.png',
+    'assets/img/gallery-35.png',
+    'assets/img/gallery-36.png',
+    'assets/img/gallery-37.png',
+    'assets/img/gallery-38.png',
+    'assets/img/gallery-39.png',
+  ];
 
   useEffect(() => {
     if (previewImage) {
       // Disable scrolling when modal is open
       document.body.style.overflow = 'hidden';
       document.body.style.touchAction = 'none'; // For mobile devices
+      // Set the current index when preview opens
+      const index = galleryImages.indexOf(previewImage);
+      setCurrentIndex(index !== -1 ? index : 0);
     } else {
       // Re-enable scrolling when modal is closed
       document.body.style.overflow = '';
@@ -25,6 +73,18 @@ const Gallery: React.FC = () => {
       document.body.style.touchAction = '';
     };
   }, [previewImage]);
+
+  const handlePrev = () => {
+    const newIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+    setCurrentIndex(newIndex);
+    setPreviewImage(galleryImages[newIndex]);
+  };
+
+  const handleNext = () => {
+    const newIndex = (currentIndex + 1) % galleryImages.length;
+    setCurrentIndex(newIndex);
+    setPreviewImage(galleryImages[newIndex]);
+  };
 
   return (
     <section className="bg-[#F4EFEB] relative pt-[100px] lg:pt-[167px] pb-[85px] lg:pb-[102px]">
@@ -40,17 +100,26 @@ const Gallery: React.FC = () => {
       <div className="container">
         {/* Gallery Title */}
         <div className="mb-[60px] lg:mb-[96px] relative z-50">
-          <h3 className="text-[#010101] text-[32px] md:text-[40px] lg:text-[42px] xl:text-[62px] 2xl:text-[72px] font-normal leading-[111.111%] tracking-[-1px] mb-4 md:mb-5 xl:mb-6" data-aos="fade-up">
+          <h3
+            className="text-[#010101] text-[32px] md:text-[40px] lg:text-[42px] xl:text-[62px] 2xl:text-[72px] font-normal leading-[111.111%] tracking-[-1px] mb-4 md:mb-5 xl:mb-6"
+            data-aos="fade-up"
+          >
             Galeria
           </h3>
-          <p className="text-black text-base md:text-lg xl:text-xl font-light tracking-[-0.14px] uppercase" data-aos="fade-up">
+          <p
+            className="text-black text-base md:text-lg xl:text-xl font-light tracking-[-0.14px] uppercase"
+            data-aos="fade-up"
+          >
             Jak jest w family house? <strong className="font-bold">zobacz sam!</strong>
           </p>
         </div>
       </div>
 
       {/* Gallery Wrapper */}
-      <div className="pl-4 sm:pl-[calc((100%-600px)/2)] md:pl-[calc((100%-730px)/2)] lg:pl-[calc((100%-984px)/2)] xl:pl-[calc((100%-1240px)/2)] 2xl:pl-[calc((100%-1600px)/2)] mt-[-185px] md:mt-[-238px]" data-aos="fade-up">
+      <div
+        className="pl-4 sm:pl-[calc((100%-600px)/2)] md:pl-[calc((100%-730px)/2)] lg:pl-[calc((100%-984px)/2)] xl:pl-[calc((100%-1240px)/2)] 2xl:pl-[calc((100%-1600px)/2)] mt-[-185px] md:mt-[-238px]"
+        data-aos="fade-up"
+      >
         <Swiper
           className="gallery_slider w-full h-full !overflow-visible"
           slidesPerView="auto"
@@ -64,11 +133,14 @@ const Gallery: React.FC = () => {
           freeMode={true}
           modules={[Autoplay]}
         >
-
           {/* Gallery Slide 1 */}
           <SwiperSlide className="!w-[574px] mt-[238px] z-50">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-1.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-1.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-1.png" alt="" className="w-full" width="574" height="400" />
@@ -78,7 +150,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 2 */}
           <SwiperSlide className="!w-[428px] mt-[377px] ml-[-100px] z-40">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-2.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-2.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-2.png" alt="" className="w-full" width="428" height="400" />
@@ -88,7 +164,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 3 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[-60px] z-30">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-3.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-3.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-3.png" alt="" className="w-full" width="428" height="400" />
@@ -98,7 +178,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 4 */}
           <SwiperSlide className="!w-[574px] mt-[457px] ml-[-214px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-4.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-4.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-4.png" alt="" className="w-full" width="574" height="400" />
@@ -108,7 +192,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 5 */}
           <SwiperSlide className="!w-[428px] mt-[238px] mx-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-5.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-5.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-5.png" alt="" className="w-full" width="428" height="400" />
@@ -118,7 +206,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 6 */}
           <SwiperSlide className="!w-[428px] mt-[426px] mr-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-6.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-6.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-6.png" alt="" className="w-full" width="428" height="400" />
@@ -128,7 +220,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 7 */}
           <SwiperSlide className="!w-[428px] mt-[101px] mr-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-7.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-7.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-7.png" alt="" className="w-full" width="428" height="400" />
@@ -138,7 +234,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 8 */}
           <SwiperSlide className="!w-[574px] mt-[238px] z-50">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-8.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-8.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-8.png" alt="" className="w-full" width="574" height="400" />
@@ -148,7 +248,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 9 */}
           <SwiperSlide className="!w-[428px] mt-[377px] ml-[-106px] z-40">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-9.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-9.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-9.png" alt="" className="w-full" width="428" height="400" />
@@ -158,7 +262,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 10 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[-63px] z-30">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-10.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-10.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-10.png" alt="" className="w-full" width="428" height="400" />
@@ -168,7 +276,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 11 */}
           <SwiperSlide className="!w-[574px] mt-[457px] ml-[-214px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-11.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-11.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-11.png" alt="" className="w-full" width="574" height="400" />
@@ -178,7 +290,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 12 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-12.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-12.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-12.png" alt="" className="w-full" width="428" height="400" />
@@ -188,7 +304,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 13 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-13.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-13.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-13.png" alt="" className="w-full" width="428" height="400" />
@@ -198,7 +318,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 14 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-14.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-14.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-14.png" alt="" className="w-full" width="428" height="400" />
@@ -208,13 +332,21 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 15 */}
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-15.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-15.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-15.png" alt="" className="w-full" width="551" height="400" />
             </div>
             <div className="relative mt-[39px]">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-16.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-16.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-16.png" alt="" className="w-full" width="551" height="400" />
@@ -224,7 +356,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 16 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-17.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-17.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-17.png" alt="" className="w-full" width="428" height="400" />
@@ -234,7 +370,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 17 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-18.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-18.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-18.png" alt="" className="w-full" width="428" height="400" />
@@ -244,7 +384,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 18 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-19.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-19.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-19.png" alt="" className="w-full" width="428" height="400" />
@@ -254,7 +398,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 19 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-20.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-20.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-20.png" alt="" className="w-full" width="428" height="400" />
@@ -264,7 +412,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 20 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-21.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-21.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-21.png" alt="" className="w-full" width="428" height="400" />
@@ -274,7 +426,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 21 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-22.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-22.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-22.png" alt="" className="w-full" width="428" height="400" />
@@ -284,13 +440,21 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 22 */}
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-23.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-23.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-23.png" alt="" className="w-full" width="551" height="400" />
             </div>
             <div className="relative mt-[39px]">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-24.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-24.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-24.png" alt="" className="w-full" width="551" height="400" />
@@ -300,7 +464,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 23 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-25.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-25.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-25.png" alt="" className="w-full" width="428" height="400" />
@@ -310,7 +478,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 24 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-26.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-26.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-26.png" alt="" className="w-full" width="428" height="400" />
@@ -320,7 +492,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 25 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[40px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-27.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-27.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-27.png" alt="" className="w-full" width="428" height="400" />
@@ -330,7 +506,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 26 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-28.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-28.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-28.png" alt="" className="w-full" width="428" height="400" />
@@ -340,7 +520,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 27 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-29.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-29.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-29.png" alt="" className="w-full" width="428" height="400" />
@@ -350,7 +534,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 28 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-30.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-30.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-30.png" alt="" className="w-full" width="428" height="400" />
@@ -360,13 +548,21 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 29 */}
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-31.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-31.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-31.png" alt="" className="w-full" width="551" height="400" />
             </div>
             <div className="relative mt-[39px]">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-32.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-32.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-32.png" alt="" className="w-full" width="551" height="400" />
@@ -376,7 +572,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 30 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[38px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-33.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-33.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-33.png" alt="" className="w-full" width="428" height="400" />
@@ -386,7 +586,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 31 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[39px]">
             <div className="relative mt-[39px]">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-34.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-34.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-34.png" alt="" className="w-full" width="428" height="400" />
@@ -396,7 +600,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 32 */}
           <SwiperSlide className="!w-[428px] mt-[1px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-35.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-35.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-35.png" alt="" className="w-full" width="428" height="400" />
@@ -406,7 +614,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 33 */}
           <SwiperSlide className="!w-[428px] mt-[0px] ml-[38px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-36.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-36.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-36.png" alt="" className="w-full" width="428" height="400" />
@@ -416,7 +628,11 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 34 */}
           <SwiperSlide className="!w-[428px] mt-[378px] ml-[40px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-37.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-37.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-37.png" alt="" className="w-full" width="428" height="400" />
@@ -426,25 +642,55 @@ const Gallery: React.FC = () => {
           {/* Gallery Slide 35 */}
           <SwiperSlide className="!w-[551px] mt-[0px] ml-[39px]">
             <div className="relative">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-38.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-38.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-38.png" alt="" className="w-full" width="551" height="400" />
             </div>
             <div className="relative mt-[39px]">
-              <button type="button" className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10" onClick={() => setPreviewImage('assets/img/gallery-39.png')}>
+              <button
+                type="button"
+                className="w-[52px] h-[52px] absolute right-5 bottom-5 cursor-pointer z-10"
+                onClick={() => setPreviewImage('assets/img/gallery-39.png')}
+              >
                 <img src="assets/img/plus-circle.svg" alt="" className="w-full" width="52" height="52" />
               </button>
               <img src="assets/img/gallery-39.png" alt="" className="w-full" width="551" height="400" />
             </div>
           </SwiperSlide>
-
         </Swiper>
       </div>
 
       {previewImage && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999999999999999]">
+        <div
+          onClick={() => setPreviewImage(null)}
+          className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999999999999999]"
+        >
           <div className="w-full h-full relative flex justify-center items-center">
+            {/* Navigation Arrows */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent closing the modal
+                handlePrev();
+              }}
+              className="absolute left-4 border-4 border-white rounded-full top-1/2 transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-custom-purple focus:ring-offset-2"
+            >
+              <ChevronLeft className="h-6 w-6" />
+            </button>
+            <button
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent closing the modal
+                handleNext();
+              }}
+              className="absolute right-4 top-1/2 border-4 border-white rounded-full transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-custom-purple focus:ring-offset-2"
+            >
+              <ChevronRight className="h-6 w-6" />
+            </button>
+
             {/* Close Button */}
             <button
               className="absolute top-4 cursor-pointer right-4 text-white text-4xl"
@@ -464,7 +710,6 @@ const Gallery: React.FC = () => {
           </div>
         </div>
       )}
-
     </section>
   );
 };

@@ -243,46 +243,46 @@ const Location: React.FC = () => {
         }
     }, [previewImage]);
 
-const SkeletonLoader = ({ count }: { count: number }) => {
-    // Use the current viewport to decide how many skeleton slides to show
-    const [visibleSlides, setVisibleSlides] = React.useState(getVisibleSlides());
+    const SkeletonLoader = ({ count }: { count: number }) => {
+        // Use the current viewport to decide how many skeleton slides to show
+        const [visibleSlides, setVisibleSlides] = React.useState(getVisibleSlides());
 
-    React.useEffect(() => {
-        const handleResize = () => setVisibleSlides(getVisibleSlides());
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }, []);
+        React.useEffect(() => {
+            const handleResize = () => setVisibleSlides(getVisibleSlides());
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
 
-    // Limit skeleton slides to the number of visible slides
-    const displayCount = Math.min(count, visibleSlides);
+        // Limit skeleton slides to the number of visible slides
+        const displayCount = Math.min(count, visibleSlides);
 
-    return (
-        <div className="location-skeleton-slider">
-            <div className="swiper-wrapper gap-4 xl:gap-7">
-                {[...Array(displayCount)].map((_, index) => (
-                    <div
-                        key={index}
-                        className="swiper-slide !w-full md:!w-[calc(50%-7.5px)] lg:!w-[calc(33.333%-20px)] xl:!w-[calc(33.333%-20px)]"
-                    >
-                        <div className="w-full animate-pulse">
-                            <div className="w-full h-[260px] sm:h-[300px] xl:h-[380px] 2xl:h-[475px] bg-gray-300 rounded-[20px]"></div>
-                            <div className="mt-6">
-                                <div className="h-3 bg-gray-300 rounded-[4px] w-1/8"></div>
-                                <div className="h-6 bg-gray-300 rounded w-full mt-3 mb-[24px] xl:mb-[30px]"></div>
-                                <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
-                                <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
-                                <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
-                                <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
-                                <div className="h-4 bg-gray-300 rounded w-1/2 mb-[24px] xl:mb-[34px]"></div>
-                                <div className="h-4 bg-gray-300 rounded w-1/3"></div>
+        return (
+            <div className="location-skeleton-slider">
+                <div className="swiper-wrapper gap-4 xl:gap-7">
+                    {[...Array(displayCount)].map((_, index) => (
+                        <div
+                            key={index}
+                            className="swiper-slide !w-full md:!w-[calc(50%-7.5px)] lg:!w-[calc(33.333%-20px)] xl:!w-[calc(33.333%-20px)]"
+                        >
+                            <div className="w-full animate-pulse">
+                                <div className="w-full h-[260px] sm:h-[300px] xl:h-[380px] 2xl:h-[475px] bg-gray-300 rounded-[20px]"></div>
+                                <div className="mt-6">
+                                    <div className="h-3 bg-gray-300 rounded-[4px] w-1/8"></div>
+                                    <div className="h-6 bg-gray-300 rounded w-full mt-3 mb-[24px] xl:mb-[30px]"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-1/2 mb-[24px] xl:mb-[34px]"></div>
+                                    <div className="h-4 bg-gray-300 rounded w-1/3"></div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
-    );
-};
+        );
+    };
 
 
     return (
@@ -426,7 +426,7 @@ const SkeletonLoader = ({ count }: { count: number }) => {
 
             {
                 previewImage && (
-                    <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999999999999999]">
+                    <div onClick={() => setPreviewImage(null)} className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999999999999999]">
                         <div className="w-full h-full relative flex justify-center items-center">
                             <button
                                 className="absolute top-4 cursor-pointer right-4 text-white text-4xl"
