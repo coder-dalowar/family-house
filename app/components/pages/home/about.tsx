@@ -50,35 +50,35 @@ const About: React.FC = () => {
               >
                 O nas
               </h2>
-              <p
-                className="text-primary text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl font-normal leading-[150%] mt-5 xl:mt-[30px]"
-                data-aos="fade-up"
-              >
-                Podhale ma w sobie coś, co zatrzymuje czas. Zapach świeżego drewna,
-                widok górskich szczytów skąpanych w słońcu i ciepło domowego ognia – to
-                właśnie ta atmosfera stała się dla nas inspiracją do stworzenia Family
-                House. Nasz dom w samym sercu Witowa to miejsce, gdzie tradycja spotyka
-                się <br className="hidden xl:block" /> z nowoczesnością. Wnętrza łączą
-                prostotę podhalańskiego stylu z wygodą, której oczekuje współczesny
-                podróżnik.
-              </p>
-              <p
-                className={`text-primary text-base md:text-lg lg:text-base xl:text-xl font-normal leading-[150%] mt-5 xl:mt-[30px] ${showMore ? 'block' : 'hidden md:block'}`}
-                data-aos="fade-up"
-              >
-                Drewniane akcenty, przytulne przestrzenie i bliskość{' '}
-                <br className="hidden xl:block" />
-                natury sprawiają, że każdy pobyt staje się wyjątkowym doświadczeniem.
-                Family House to nie tylko dach nad głową <br className="hidden xl:block" />
-                – to przestrzeń stworzona z myślą o tych, którzy szukają wytchnienia i
-                chcą poczuć magię Tatr z bliska.
-              </p>
-              <p
-                className="block md:hidden text-custom-purple text-base font-semibold leading-[150%] mt-5 cursor-pointer"
-                onClick={() => setShowMore(!showMore)}
-              >
-                {showMore ? 'Show Less' : 'Load More...'}
-              </p>
+              <div data-aos="fade-up">
+                <p
+                  className="text-primary text-base md:text-lg lg:text-base xl:text-lg 2xl:text-xl font-normal leading-[150%] mt-5 xl:mt-[30px]"
+                >
+                  Podhale ma w sobie coś, co zatrzymuje czas. Zapach świeżego drewna,
+                  widok górskich szczytów skąpanych w słońcu i ciepło domowego ognia – to
+                  właśnie ta atmosfera stała się dla nas inspiracją do stworzenia Family
+                  House. Nasz dom w samym sercu Witowa to miejsce, gdzie tradycja spotyka
+                  się <br className="hidden xl:block" /> z nowoczesnością. Wnętrza łączą
+                  prostotę podhalańskiego stylu z wygodą, której oczekuje współczesny
+                  podróżnik.
+                </p>
+                <p
+                  className={`text-primary text-base md:text-lg lg:text-base xl:text-xl font-normal leading-[150%] mt-5 xl:mt-[30px] ${showMore ? 'block' : 'hidden md:block'}`}
+                >
+                  Drewniane akcenty, przytulne przestrzenie i bliskość{' '}
+                  <br className="hidden xl:block" />
+                  natury sprawiają, że każdy pobyt staje się wyjątkowym doświadczeniem.
+                  Family House to nie tylko dach nad głową <br className="hidden xl:block" />
+                  – to przestrzeń stworzona z myślą o tych, którzy szukają wytchnienia i
+                  chcą poczuć magię Tatr z bliska.
+                </p>
+                <p
+                  className="block md:hidden text-custom-purple text-base font-semibold leading-[150%] mt-5 cursor-pointer"
+                  onClick={() => setShowMore(!showMore)}
+                >
+                  {showMore ? 'Show Less' : 'Load More...'}
+                </p>
+              </div>
             </div>
           </div>
 

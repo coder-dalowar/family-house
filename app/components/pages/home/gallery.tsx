@@ -677,7 +677,7 @@ const Gallery: React.FC = () => {
                 e.stopPropagation(); // Prevent closing the modal
                 handlePrev();
               }}
-              className="absolute left-4 border-4 border-white rounded-full top-1/2 transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-custom-purple focus:ring-offset-2"
+              className="absolute left-4 border-4 border-white cursor-pointer rounded-full top-1/2 transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:opacity-70"
             >
               <ChevronLeft className="h-6 w-6" />
             </button>
@@ -686,7 +686,7 @@ const Gallery: React.FC = () => {
                 e.stopPropagation(); // Prevent closing the modal
                 handleNext();
               }}
-              className="absolute right-4 top-1/2 border-4 border-white rounded-full transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md focus:outline-none focus:ring-2 focus:ring-custom-purple focus:ring-offset-2"
+              className="absolute right-4 top-1/2 border-4 border-white cursor-pointer rounded-full transform -translate-y-1/2 bg-custom-purple text-white w-12 h-12 rounded-full flex items-center justify-center shadow-md transition-all hover:opacity-70"
             >
               <ChevronRight className="h-6 w-6" />
             </button>

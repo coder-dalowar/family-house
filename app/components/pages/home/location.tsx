@@ -28,7 +28,7 @@ interface SlideItem {
 
 const allSlides: SlideItem[] = [
     {
-        img: 'location-1.png',
+        img: 'location-u-1.png',
         title: 'Dolina Kościeliska',
         distance: '7,5 km',
         desc: 'Spokojna, szeroka dolina z łagodnym szlakiem przy potoku – doskonała na rodzinne spacery i bliskie spotkania z naturą. Na trasie czekają jaskinie, malownicze formacje skalne oraz klimatyczne schronisko – idealne na chwilę odpoczynku.',
@@ -36,7 +36,7 @@ const allSlides: SlideItem[] = [
         category: 'Wycieczki',
     },
     {
-        img: 'location-2.png',
+        img: 'location-u-2.png',
         title: 'Dolina Chochołowska',
         distance: '6 km',
         desc: 'Marzysz o spokojnych, rodzinnych spacerach wśród szumiącego potoku i tatrzańskich szczytów? To miejsce jest idealne na relaks w górskim rytmie. Wiosną pola krokusów rozkwitają tutaj feerią barw, a schronisko PTTK na Polanie Chochołowskiej zaprasza na góralskie przysmaki i chwilę wytchnienia.',
@@ -44,7 +44,7 @@ const allSlides: SlideItem[] = [
         category: 'Wycieczki',
     },
     {
-        img: 'location-3.png',
+        img: 'location-u-3.png',
         title: 'Dolina Małej Łąki',
         distance: '10 km',
         desc: 'Malowniczy spacer z dziećmi wśród reglowego lasu i potoku – bez trudnych podejść, za to pełen przestrzeni i spokoju. W sercu doliny rozciąga się Wielka Polana Małołącka – prawdziwy raj na piknik, z oszałamiającymi widokami na Giewont i Czerwone Wierchy.',
@@ -52,7 +52,7 @@ const allSlides: SlideItem[] = [
         category: 'Wycieczki',
     },
     {
-        img: 'location-4.png',
+        img: 'location-u-4.png',
         title: 'Zakopane Dworzec Pks',
         distance: '16 km',
         desc: 'Zakopane Dworzec PKS Nowoczesne przejście – blisko centrum, z wygodnym dojściem i podstawową infrastrukturą dla rodzin z bagażem. Zadaszone perony, poczekalnia z ławkami i szybki dostęp do busów turystycznych – idealny transportowy przystanek po przyjeździe.',
@@ -60,7 +60,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-5.png',
+        img: 'location-u-5.png',
         title: 'Chochołowskie Termy',
         distance: '2,1 km',
         desc: 'Rodzinna przygoda w największym kompleksie basenów termalnych na Podhalu — z rwącą rzeką, sztuczną falą, hydromasażem i zjeżdżalniami. Moc relaksu w wodach bogatych w minerały, strefa lecznicza, SPA i plac zabaw dla najmłodszych — doskonałe zakończenie górskiego dnia.',
@@ -68,7 +68,7 @@ const allSlides: SlideItem[] = [
         category: 'Baseny termalne',
     },
     {
-        img: 'location-6.png',
+        img: 'location-u-6.png',
         title: 'Oravice Termy',
         distance: '20 km',
         desc: 'Wyjątkowe kąpiele w geotermalnych basenach z górskim pejzażem – idealne dla rodzin przez cały rok. Bogata w minerały woda koi ciało i duszę. Dzieci bawią się na zjeżdżalni, a dorośli relaksują się w saunie, podczas masażu lub na leżaku z widokiem na Tatry Zachodnie.',
@@ -76,7 +76,7 @@ const allSlides: SlideItem[] = [
         category: 'Baseny termalne',
     },
     {
-        img: 'location-7.png',
+        img: 'location-u-7.png',
         title: 'Tatralandia',
         distance: '31 km',
         desc: 'Tropikalny aquapark u stóp Tatr – ze zjeżdżalniami, basenami i animacjami, idealny na rodzinne szaleństwo przez cały rok. Relaks w ciepłych termalnych wodach, sauna, wellness i atrakcje dla najmłodszych – wszystko w jednym miejscu.',
@@ -84,7 +84,7 @@ const allSlides: SlideItem[] = [
         category: 'Baseny termalne',
     },
     {
-        img: 'location-8.png',
+        img: 'location-u-8.png',
         title: 'Witów SKI',
         distance: '1,5 km',
         desc: 'Przyjazny zimowy zakątek – idealny na rodzinne szaleństwo. Łagodne stoki dla początkujących, snowpark i widoki na Tatry czekają blisko Family House. Śnieg i zabawa tuż przy domu – oświetlone, zaśnieżane trasy, szkolenie w szkółce Jagny Marczułajtis i pyszna karczma “Witowianka” na krótką przerwę.',
@@ -92,7 +92,7 @@ const allSlides: SlideItem[] = [
         category: 'Wyciągi narciarskie',
     },
     {
-        img: 'location-9.png',
+        img: 'location-u-9.png',
         title: 'Wyciąg Uboc',
         distance: '160 m',
         desc: 'Łagodny stok i krótka trasa – idealne miejsce na pierwsze kroki w nartach. Blisko i wygodnie, wręcz przy domu Family House. Oświetlony, ratrakowany, sztucznie naśnieżany – doskonała propozycja dla rodzin i początkujących narciarzy. Szkółka, wypożyczalnia i karczma blisko stoku.',
@@ -100,7 +100,7 @@ const allSlides: SlideItem[] = [
         category: 'Wyciągi narciarskie',
     },
     {
-        img: 'location-10.png',
+        img: 'location-u-10.png',
         title: 'Polana Szymoszkowa',
         distance: '14 km',
         desc: 'Rodzinne zimowe szaleństwo na stokach z panoramicznym widokiem na Tatry i Giewont. Kolejka wjeżdża na Gubałówkę, zachwyt gwarantowany. Latem – unikalne kąpielisko geotermalne z widokiem na góry, plac zabaw dla dzieci i relaks wśród górskiej atmosfery.',
@@ -108,7 +108,7 @@ const allSlides: SlideItem[] = [
         category: 'Wyciągi narciarskie',
     },
     {
-        img: 'location-11.png',
+        img: 'location-u-11.png',
         title: 'Sezamek',
         distance: '400 m',
         desc: 'Witów 137 – codzienna wygoda tuż za progiem: sklep samoobsługowy z parkingiem i możliwością płatności kartą. Świeże pieczywo, nabiał, owoce, przekąski i wszystko, czego potrzeba na rodzinne śniadanie.',
@@ -116,7 +116,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-12.png',
+        img: 'location-u-12.png',
         title: 'U Teresy',
         distance: '900 m',
         desc: 'Mały, rodzinny sklep w sercu Witowa – zawsze świeże produkty i życzliwa obsługa, idealny na codzienne zakupy podczas pobytu. Pieczywo, nabiał, słodycze i napoje – wszystko, czego potrzeba, by uzupełnić zapasy po dniu pełnym górskich atrakcji.',
@@ -124,7 +124,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-13.png',
+        img: 'location-u-13.png',
         title: 'U Bachledy',
         distance: '750 m',
         desc: 'Tradycyjny sklep spożywczy przy głównej drodze DW958 – wygodne miejsce na szybkie zakupy w drodze do Zakopanego lub na szlak. Znajdziesz tu pieczywo, nabiał, napoje i przekąski – idealne, by uzupełnić prowiant na górską wyprawę z całą rodziną.',
@@ -132,7 +132,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-14.png',
+        img: 'location-u-14.png',
         title: 'Delikatesy u Leji',
         distance: '1,8 km',
         desc: 'Nowoczesny sklep w centrum Witowa – szeroki wybór produktów dla całej rodziny i wygodne zakupy blisko domu. Owoce, warzywa, nabiał, słodycze, pieczywo i napoje – wszystko w jednym miejscu.',
@@ -140,7 +140,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-15.png',
+        img: 'location-u-15.png',
         title: 'Supermarket Chochołów',
         distance: '2,2 km',
         desc: 'Duży sklep z szerokim asortymentem – idealny na większe zakupy w pobliżu Family House. Produkty spożywcze, chemia gospodarcza, artykuły dziecięce, świeże pieczywo i warzywa – wszystko w jednym miejscu.',
@@ -148,7 +148,7 @@ const allSlides: SlideItem[] = [
         category: 'Sklepy',
     },
     {
-        img: 'location-16.png',
+        img: 'location-u-16.png',
         title: 'Karczma Witówka',
         distance: '1,5 km',
         desc: 'Regionalna restauracja w pobliżu stoków – kuchnia podhalańska w klasycznym góralskim klimacie. Oscypek, kwaśnica, pierogi i gorące napoje po dniu pełnym atrakcji w górach.',
@@ -156,7 +156,7 @@ const allSlides: SlideItem[] = [
         category: 'Restauracje',
     },
     {
-        img: 'location-17.png',
+        img: 'location-u-17.png',
         title: 'Witowianka',
         distance: '1,5 km',
         desc: 'Regionalna restauracja z duszą – położona tuż przy wyciągu Witów‑Ski. Podhalańskie potrawy, tradycja i ciepła atmosfera w jednym miejscu.',
@@ -164,7 +164,7 @@ const allSlides: SlideItem[] = [
         category: 'Restauracje',
     },
     {
-        img: 'location-18.png',
+        img: 'location-u-18.png',
         title: 'Restauracja U Kowala',
         distance: '2 km',
         desc: 'Stylowa restauracja w Chochołowie – kuchnia polska i europejska w nowoczesnym wydaniu. Idealne miejsce na romantyczną kolację lub rodzinny obiad.',
@@ -172,7 +172,7 @@ const allSlides: SlideItem[] = [
         category: 'Restauracje',
     },
     {
-        img: 'location-19.png',
+        img: 'location-u-19.png',
         title: 'Restauracja Góralska',
         distance: '2,5 km',
         desc: 'Autentyczna góralska kuchnia w Chochołowie – oscypek, kwaśnica, moskole. Ciepła atmosfera i lokalny klimat dla całej rodziny.',
@@ -180,7 +180,7 @@ const allSlides: SlideItem[] = [
         category: 'Restauracje',
     },
     {
-        img: 'location-20.png',
+        img: 'location-u-20.png',
         title: 'Karczma Pod Giewontem',
         distance: '3 km',
         desc: 'Restauracja w Zakopanem z widokiem na Giewont – kuchnia polska i regionalna, przyjazna dla rodzin z dziećmi.',
@@ -188,7 +188,7 @@ const allSlides: SlideItem[] = [
         category: 'Restauracje',
     },
     {
-        img: 'location-21.png',
+        img: 'location-u-21.png',
         title: 'Karczma U Fiakra',
         distance: '3,5 km',
         desc: 'Autentyczne góralskie dania w klimacie zakopiańskiej wsi – doskonałe dla rodzin i turystów.',
