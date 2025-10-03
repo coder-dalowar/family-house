@@ -389,18 +389,18 @@ const Location: React.FC = () => {
                                                     </div>
                                                     <button
                                                         type="button"
-                                                        className="more_btn text-primary text-base font-normal leading-[180%] tracking-[-0.16px] inline-flex items-center gap-2.5 cursor-pointer"
-                                                        onClick={() => toggleReadMore(index)}
+                                                        className="group more_btn text-primary text-base font-normal leading-[180%] tracking-[-0.16px] inline-flex items-center gap-2.5 cursor-pointer"
                                                     >
-                                                        {openSlides[index] ? 'Zwiń' : 'Czytaj więcej'}
+                                                        Czytaj więcej
                                                         <Image
                                                             src="/assets/img/right-arrow-black.svg"
                                                             alt="Arrow"
                                                             width={20}
                                                             height={20}
-                                                            className="w-5"
+                                                            className="w-5 transform transition-transform duration-300 group-hover:translate-x-2"
                                                         />
                                                     </button>
+
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -439,8 +439,9 @@ const Location: React.FC = () => {
                                 <Image
                                     src={previewImage}
                                     alt="Preview"
-                                    width={1200}
-                                    height={800}
+                                    width={3000}
+                                    height={3000}
+                                    quality={100}
                                     className="w-full h-full object-contain rounded-lg"
                                 />
                             </div>

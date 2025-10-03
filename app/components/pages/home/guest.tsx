@@ -5,7 +5,7 @@ import React from 'react';
 
 const GuestSection: React.FC = () => {
   return (
-    <section className="py-[80px] lg:pt-[90px] lg:pb-[100px] border-t border-t-[rgba(0,0,0,0.50)] border-b border-b-[rgba(0,0,0,0.50)]">
+    <section className="py-[80px] lg:pt-[90px] lg:pb-[100px] lg:border-t border-t-[rgba(0,0,0,0.50)] border-b border-b-[rgba(0,0,0,0.50)]">
       <div className="container">
         <div className="flex flex-wrap items-center justify-between gap-4 sm:gap-7">
           <h3 className="text-black text-[32px] sm:text-[36px] md:text-[45px] lg:text-[50px] xl:text-[76px] 2xl:text-[100px] font-normal leading-[107%] xl:tracking-[-3px] tracking-[-1px]" data-aos="fade-up">

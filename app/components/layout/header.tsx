@@ -89,7 +89,7 @@ const Header: React.FC = () => {
 
           {/* Desktop Menu */}
           <div className="hidden lg:flex items-center 2xl:gap-[55px] lg:gap-[35px] gap-[25px]">
-            <ul className="flex items-center gap-[20px]">
+            <ul className="flex items-center xl:gap-[30px] 2xl:gap-[50px] gap-[20px]">
               {navItems.map((item) => (
                 <li key={item.label}>
                   <Link
@@ -166,7 +166,7 @@ const Header: React.FC = () => {
                 ))}
               </ul>
             </div>
-            <div className="mt-auto py-5">
+            <div className="py-5">
               <Link
                 href="#"
                 className="header_btn w-full block text-center px-4 py-[14px] text-base text-white font-ivymode font-normal bg-brown rounded-xl transition-all hover:opacity-85"

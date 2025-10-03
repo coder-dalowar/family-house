@@ -85,7 +85,7 @@ const FAQ: React.FC = () => {
       <div className=" px-0  mx-auto">
         {/* FAQ Title */}
         <div className="container text-center mb-[60px] md:mb-[95px]">
-          <h3 className="text-[#010101] text-[32px] md:text-[40px] lg:text-[42px] xl:text-[62px] 2xl:text-[72px] font-normal leading-[111.111%] tracking-[-1px]" data-aos="fade-up">
+          <h3 className="text-[#010101] text-[32px] md:text-[40px] lg:text-[42px] xl:text-[62px] 2xl:text-[72px] font-normal leading-[130%] lg:leading-[111.111%] tracking-[-1px]" data-aos="fade-up">
             Najczęściej zadawane pytania (FAQ)
           </h3>
         </div>
@@ -99,7 +99,7 @@ const FAQ: React.FC = () => {
           >
             <button
               type="button"
-              className="accordion-header w-full flex items-center md:justify-center gap-[30px] md:gap-[50px] px-4 pb-5 md:pb-6 border-b border-b-[rgba(0,0,0,0.50)] cursor-pointer transition-all duration-300 text-lg md:text-xl xl:text-2xl text-black font-normal leading-[91.667%] tracking-[-0.24px] uppercase outline-none text-center"
+              className="accordion-header w-full flex items-center md:justify-center gap-[30px] md:gap-[50px] px-4 pb-5 md:pb-6 border-b border-b-[rgba(0,0,0,0.50)] cursor-pointer transition-all duration-300 text-lg md:text-xl xl:text-2xl text-black font-normal leading-[120%] lg:leading-[91.667%] tracking-[-0.24px] uppercase outline-none text-center"
               onClick={() => toggleAccordion(index)}
             >
               <span>{item.question}</span>

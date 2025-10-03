@@ -266,7 +266,7 @@ const ContactSection: React.FC = () => {
                     {/* Right Column */}
                     <div className="w-full max-w-full lg:max-w-[620px]" data-aos="fade-left">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83296.93991424341!2d19.889369870553587!3d49.27584065190892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715f29294ef3939%3A0xdf8d87a1716ba6a0!2sZakopane%2C%20Poland!5e0!3m2!1sen!2sbd!4v1757219166529!5m2!1sen!2sbd"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83296.24634693528!2d20.192686136643896!3d49.276251345779244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4715f558e275ee07%3A0x400f7d1c6978910!2s059%2056%20Tatransk%C3%A1%20Javorina%2C%20Slovakia!5e0!3m2!1sen!2sbd!4v1759518912854!5m2!1sen!2sbd"
                             className="w-full h-[350px] md:h-[465px] border-0 grayscale"
                             allowFullScreen
                             loading="lazy"

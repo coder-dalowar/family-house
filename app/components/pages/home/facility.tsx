@@ -119,7 +119,7 @@ const Facility: React.FC = () => {
                     </Swiper>
 
                     {/* Navigation Buttons */}
-                    <div className="w-[105px] md:w-[100px] xl:w-[116px] flex items-center gap-4 xl:gap-5 absolute top-[108%] md:top-[-30px] xl:top-[-40px] md:right-[16%] right-[30%] select-none" data-aos="zoom-in-left">
+                    <div className="w-[105px] md:w-[100px] xl:w-[116px] flex items-center gap-4 xl:gap-5 absolute top-[108%] md:top-[-30px] xl:top-[-40px] right-1/2 md:right-[16%] lg:right-[30%] translate-x-1/2 select-none" data-aos="zoom-in-left">
                         <div className="swiper-button-prev facility-button-prev after:hidden !w-[35px] md:!w-[36px] lg:!w-[40px] xl:!w-[48px] !static">
                             <Image
                                 src="/assets/img/left.svg"

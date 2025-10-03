@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Social Icons */}
-              <div className="text-right mt-[60px] md:mt-[80px] lg:mt-[100px]" data-aos="fade-left">
+              <div className="text-right mt-[20px] md:mt-[80px] lg:mt-[100px]" data-aos="fade-left">
                 <ul className="flex flex-col gap-1.5 items-end">
                   {['facebook', 'instagram'].map((social) => (
                     <li key={social}>
@@ -79,12 +79,12 @@ const Hero: React.FC = () => {
               </div>
 
               {/* Hero Text */}
-              <div className="lg:mt-auto pb-[30px] lg:pb-[160px] xl:pb-[140px] pt-[16px] sm:pt-0">
+              <div className="lg:mt-auto pb-[30px] lg:pb-[160px] xl:pb-[140px] pt-[50px] sm:pt-0">
                 <h2 className="text-white text-[32px] md:text-[40px] lg:text-[42px] xl:text-[65px] 2xl:text-[75px] font-normal leading-[133.75%] tracking-[-1px] xl:tracking-[-3px] mb-[36px] md:mb-[40px] lg:mb-[45px] xl:mb-[50px]" data-aos="fade-up">
                   Rodzinny wypoczynek u podnóża Tatr
                 </h2>
 
-                <div className="flex items-center gap-[80px] pl-2 mb-3 justify-between lg:justify-start" data-aos="fade-up">
+                <div className="flex items-center gap-[80px] lg:pl-2 mb-3 justify-between lg:justify-start" data-aos="fade-up">
                   <p className="text-white text-base font-normal leading-[120%]">
                     Data przyjazdu
                   </p>

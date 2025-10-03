@@ -151,7 +151,7 @@ const Explore: React.FC = () => {
 
               <button
                 onClick={() => swiperRef.current?.slideNext()}
-                className="w-[85px] md:w-[120px] cursor-pointer xl:w-[140px] 2xl:w-[170px] inline-block transition-all shrink-0 hover:opacity-60 order-1 md:order-2"
+                className="hidden lg:inline-block w-[85px] md:w-[120px] cursor-pointer xl:w-[140px] 2xl:w-[170px] transition-all shrink-0 hover:opacity-60 order-1 md:order-2"
               >
                 <Image
                   src="/assets/img/right-arrow-rounded.svg"
@@ -161,6 +161,26 @@ const Explore: React.FC = () => {
                   className="w-full"
                 />
               </button>
+
+              {/* for mobile */}
+              <button
+                onClick={() => {
+                  if (!swiperRef.current) return;
+                  swiperRef.current.slideNext();
+                  const nextIndex = swiperRef.current.realIndex;
+                  setSelectedIndex(nextIndex);
+                }}
+                className="lg:hidden w-[85px] md:w-[120px] cursor-pointer xl:w-[140px] 2xl:w-[170px] inline-block transition-all shrink-0 hover:opacity-60 order-1 md:order-2"
+              >
+                <Image
+                  src="/assets/img/right-arrow-rounded.svg"
+                  alt="Right Arrow"
+                  width={170}
+                  height={50}
+                  className="w-full"
+                />
+              </button>
+
             </div>
           </div>
         </div>
